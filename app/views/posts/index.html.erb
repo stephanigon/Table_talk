@@ -1,10 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Blog Posts</h1>
+
+<%= link_to 'New Post', new_post_path %>
+
   <% @posts.each do |post| %>
       <h2><%= link_to post.title, post %></h2>
-      <%= post.image %>
-      <%= post.description %>
+      <a href="<%= post_url(post) %>"><%= image_tag post.image.url unless post.image.blank? %></a>
+      <br>
+      <%= post.description.truncate(100, seperator: ' ') %>
       <br>
       <%= link_to 'Edit', edit_post_path(post) %>
       <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -13,4 +17,3 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
