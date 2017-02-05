@@ -1,0 +1,10 @@
+<h2><%= link_to post.title, post %></h2>
+<%= post.user.full_name %>
+<br>
+<a href="<%= post_url(post) %>"><%= image_tag post.image.url unless post.image.blank? %></a>
+<br>
+<%= truncate(post.description, length: 150, omission: '... [Read more]') %>
+<br>
+<%= link_to 'Edit', edit_post_path(post) %>
+<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<hr>

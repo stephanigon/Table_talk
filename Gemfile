@@ -23,6 +23,7 @@ group :development, :test do
  gem 'rspec-rails', '~> 3.0'
  gem 'capybara'
  gem 'database_cleaner'
+ gem 'factory_girl_rails', '~> 4.8'
 end
 
 group :development do
@@ -42,7 +43,6 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'unf', '~> 0.1.4'
 gem 'image_magick', '~> 0.1.9'
 
-#user authentication
 gem 'devise', '~> 4.2'
-
-
+gem 'administrate', '~> 0.3.0'
+gem 'bourbon'
